@@ -1,0 +1,25 @@
+# Xcode & Swift
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+*.xccheckout
+*.moved-aside
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# macOS
+.DS_Store
+
+# Secrets / keys
+*.p8
+.env
+*.key
+*.pem
+
+# Logs
+*.log
+

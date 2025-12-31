@@ -1,0 +1,661 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11760BA52F0559B400F244F8 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 11760BA42F0559B400F244F8 /* Auth */; };
+		11760BA72F0559B400F244F8 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 11760BA62F0559B400F244F8 /* Functions */; };
+		11760BA92F0559B400F244F8 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 11760BA82F0559B400F244F8 /* PostgREST */; };
+		11760BAB2F0559B400F244F8 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 11760BAA2F0559B400F244F8 /* Realtime */; };
+		11760BAD2F0559B400F244F8 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 11760BAC2F0559B400F244F8 /* Storage */; };
+		11760BAF2F0559B400F244F8 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 11760BAE2F0559B400F244F8 /* Supabase */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11760B652F0552CD00F244F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11760B4F2F0552CB00F244F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11760B562F0552CB00F244F8;
+			remoteInfo = Zikkim;
+		};
+		11760B6F2F0552CD00F244F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11760B4F2F0552CB00F244F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11760B562F0552CB00F244F8;
+			remoteInfo = Zikkim;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		11760B572F0552CB00F244F8 /* Zikkim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zikkim.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11760B642F0552CD00F244F8 /* ZikkimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZikkimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11760B6E2F0552CD00F244F8 /* ZikkimUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZikkimUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		11760B592F0552CB00F244F8 /* Zikkim */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Zikkim;
+			sourceTree = "<group>";
+		};
+		11760B672F0552CD00F244F8 /* ZikkimTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ZikkimTests;
+			sourceTree = "<group>";
+		};
+		11760B712F0552CD00F244F8 /* ZikkimUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ZikkimUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11760B542F0552CB00F244F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11760BA92F0559B400F244F8 /* PostgREST in Frameworks */,
+				11760BA72F0559B400F244F8 /* Functions in Frameworks */,
+				11760BAF2F0559B400F244F8 /* Supabase in Frameworks */,
+				11760BA52F0559B400F244F8 /* Auth in Frameworks */,
+				11760BAD2F0559B400F244F8 /* Storage in Frameworks */,
+				11760BAB2F0559B400F244F8 /* Realtime in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11760B612F0552CD00F244F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11760B6B2F0552CD00F244F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11760B4E2F0552CB00F244F8 = {
+			isa = PBXGroup;
+			children = (
+				11760B592F0552CB00F244F8 /* Zikkim */,
+				11760B672F0552CD00F244F8 /* ZikkimTests */,
+				11760B712F0552CD00F244F8 /* ZikkimUITests */,
+				11760BA32F0559A900F244F8 /* Frameworks */,
+				11760B582F0552CB00F244F8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		11760B582F0552CB00F244F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11760B572F0552CB00F244F8 /* Zikkim.app */,
+				11760B642F0552CD00F244F8 /* ZikkimTests.xctest */,
+				11760B6E2F0552CD00F244F8 /* ZikkimUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11760BA32F0559A900F244F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11760B562F0552CB00F244F8 /* Zikkim */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11760B782F0552CD00F244F8 /* Build configuration list for PBXNativeTarget "Zikkim" */;
+			buildPhases = (
+				11760B532F0552CB00F244F8 /* Sources */,
+				11760B542F0552CB00F244F8 /* Frameworks */,
+				11760B552F0552CB00F244F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				11760B592F0552CB00F244F8 /* Zikkim */,
+			);
+			name = Zikkim;
+			packageProductDependencies = (
+				11760BA42F0559B400F244F8 /* Auth */,
+				11760BA62F0559B400F244F8 /* Functions */,
+				11760BA82F0559B400F244F8 /* PostgREST */,
+				11760BAA2F0559B400F244F8 /* Realtime */,
+				11760BAC2F0559B400F244F8 /* Storage */,
+				11760BAE2F0559B400F244F8 /* Supabase */,
+			);
+			productName = Zikkim;
+			productReference = 11760B572F0552CB00F244F8 /* Zikkim.app */;
+			productType = "com.apple.product-type.application";
+		};
+		11760B632F0552CD00F244F8 /* ZikkimTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11760B7B2F0552CD00F244F8 /* Build configuration list for PBXNativeTarget "ZikkimTests" */;
+			buildPhases = (
+				11760B602F0552CD00F244F8 /* Sources */,
+				11760B612F0552CD00F244F8 /* Frameworks */,
+				11760B622F0552CD00F244F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11760B662F0552CD00F244F8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				11760B672F0552CD00F244F8 /* ZikkimTests */,
+			);
+			name = ZikkimTests;
+			packageProductDependencies = (
+			);
+			productName = ZikkimTests;
+			productReference = 11760B642F0552CD00F244F8 /* ZikkimTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		11760B6D2F0552CD00F244F8 /* ZikkimUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11760B7E2F0552CD00F244F8 /* Build configuration list for PBXNativeTarget "ZikkimUITests" */;
+			buildPhases = (
+				11760B6A2F0552CD00F244F8 /* Sources */,
+				11760B6B2F0552CD00F244F8 /* Frameworks */,
+				11760B6C2F0552CD00F244F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11760B702F0552CD00F244F8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				11760B712F0552CD00F244F8 /* ZikkimUITests */,
+			);
+			name = ZikkimUITests;
+			packageProductDependencies = (
+			);
+			productName = ZikkimUITests;
+			productReference = 11760B6E2F0552CD00F244F8 /* ZikkimUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11760B4F2F0552CB00F244F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					11760B562F0552CB00F244F8 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					11760B632F0552CD00F244F8 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 11760B562F0552CB00F244F8;
+					};
+					11760B6D2F0552CD00F244F8 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 11760B562F0552CB00F244F8;
+					};
+				};
+			};
+			buildConfigurationList = 11760B522F0552CB00F244F8 /* Build configuration list for PBXProject "Zikkim" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11760B4E2F0552CB00F244F8;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				11760B812F0553B200F244F8 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 11760B582F0552CB00F244F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11760B562F0552CB00F244F8 /* Zikkim */,
+				11760B632F0552CD00F244F8 /* ZikkimTests */,
+				11760B6D2F0552CD00F244F8 /* ZikkimUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11760B552F0552CB00F244F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11760B622F0552CD00F244F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11760B6C2F0552CD00F244F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11760B532F0552CB00F244F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11760B602F0552CD00F244F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11760B6A2F0552CD00F244F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11760B662F0552CD00F244F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11760B562F0552CB00F244F8 /* Zikkim */;
+			targetProxy = 11760B652F0552CD00F244F8 /* PBXContainerItemProxy */;
+		};
+		11760B702F0552CD00F244F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11760B562F0552CB00F244F8 /* Zikkim */;
+			targetProxy = 11760B6F2F0552CD00F244F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		11760B762F0552CD00F244F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = WSRR9VP639;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		11760B772F0552CD00F244F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = WSRR9VP639;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11760B792F0552CD00F244F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Zikkim/Zikkim.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WSRR9VP639;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alperendonmez.Zikkim;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		11760B7A2F0552CD00F244F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Zikkim/Zikkim.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WSRR9VP639;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alperendonmez.Zikkim;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		11760B7C2F0552CD00F244F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WSRR9VP639;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alperendonmez.ZikkimTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zikkim.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Zikkim";
+			};
+			name = Debug;
+		};
+		11760B7D2F0552CD00F244F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WSRR9VP639;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alperendonmez.ZikkimTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zikkim.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Zikkim";
+			};
+			name = Release;
+		};
+		11760B7F2F0552CD00F244F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WSRR9VP639;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alperendonmez.ZikkimUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Zikkim;
+			};
+			name = Debug;
+		};
+		11760B802F0552CD00F244F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WSRR9VP639;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alperendonmez.ZikkimUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Zikkim;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11760B522F0552CB00F244F8 /* Build configuration list for PBXProject "Zikkim" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11760B762F0552CD00F244F8 /* Debug */,
+				11760B772F0552CD00F244F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11760B782F0552CD00F244F8 /* Build configuration list for PBXNativeTarget "Zikkim" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11760B792F0552CD00F244F8 /* Debug */,
+				11760B7A2F0552CD00F244F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11760B7B2F0552CD00F244F8 /* Build configuration list for PBXNativeTarget "ZikkimTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11760B7C2F0552CD00F244F8 /* Debug */,
+				11760B7D2F0552CD00F244F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11760B7E2F0552CD00F244F8 /* Build configuration list for PBXNativeTarget "ZikkimUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11760B7F2F0552CD00F244F8 /* Debug */,
+				11760B802F0552CD00F244F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		11760B812F0553B200F244F8 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase-community/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		11760BA42F0559B400F244F8 /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11760B812F0553B200F244F8 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		11760BA62F0559B400F244F8 /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11760B812F0553B200F244F8 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		11760BA82F0559B400F244F8 /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11760B812F0553B200F244F8 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		11760BAA2F0559B400F244F8 /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11760B812F0553B200F244F8 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
+		};
+		11760BAC2F0559B400F244F8 /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11760B812F0553B200F244F8 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		11760BAE2F0559B400F244F8 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11760B812F0553B200F244F8 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 11760B4F2F0552CB00F244F8 /* Project object */;
+}
