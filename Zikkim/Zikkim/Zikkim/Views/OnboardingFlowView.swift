@@ -213,7 +213,7 @@ struct OnboardingFlowView: View {
         defer { isSubmitting = false }
 
         do {
-            guard let session = authViewModel.session else {
+            guard authViewModel.session != nil else {
                 errorMessage = "Sign in with Apple first."
                 return
             }
