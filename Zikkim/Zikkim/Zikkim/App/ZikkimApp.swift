@@ -9,7 +9,7 @@ struct ZikkimApp: App {
         WindowGroup {
             Group {
                 if hasCompletedOnboarding {
-                    DashboardView()
+                    MainTabView()
                         .environmentObject(authViewModel)
                 } else {
                     OnboardingFlowView()
