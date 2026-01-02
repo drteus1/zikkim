@@ -83,13 +83,18 @@ final class AuthViewModel: ObservableObject {
 
         let inserted: Profile = try await client
             .from("profiles")
-            .upsert(payload, returning: .representation)
+            .upsert(payload, onConflict: "user_id", returning: .representation)
             .select()
             .single()
             .execute()
             .value
 
         profile = inserted
+    }
+    
+    /// Check if the current user already has a profile (returning user)
+    var hasExistingProfile: Bool {
+        return profile != nil
     }
 }
 

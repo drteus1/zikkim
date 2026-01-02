@@ -27,7 +27,7 @@ struct DashboardView: View {
             .onAppear {
                 viewModel.configure(profile: authViewModel.profile)
             }
-            .onChange(of: authViewModel.profile?.id) { _ in
+            .onChange(of: authViewModel.profile?.id) { _, _ in
                 viewModel.configure(profile: authViewModel.profile)
             }
         }

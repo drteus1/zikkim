@@ -17,7 +17,7 @@ final class DashboardViewModel: ObservableObject {
     @Published var errorMessage: String?
 
     private var profile: Profile?
-    private var timer: Timer?
+    private var tickerTask: Task<Void, Never>?
     private let cigarettesPerPack = 20.0
     private let lifeMinutesPerCigarette = 11.0
     private let client = SupabaseClientProvider.shared.client
@@ -30,16 +30,21 @@ final class DashboardViewModel: ObservableObject {
     }
 
     func startTimer() {
-        timer?.invalidate()
+        tickerTask?.cancel()
         guard profile != nil else { return }
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
-            Task { @MainActor in self?.updateStats() }
+        tickerTask = Task { [weak self] in
+            while !Task.isCancelled {
+                try? await Task.sleep(nanoseconds: 1_000_000_000)
+                await MainActor.run {
+                    self?.updateStats()
+                }
+            }
         }
     }
 
     func stopTimer() {
-        timer?.invalidate()
-        timer = nil
+        tickerTask?.cancel()
+        tickerTask = nil
     }
 
     func updateStats() {
