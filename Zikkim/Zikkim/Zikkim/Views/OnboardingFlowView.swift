@@ -22,9 +22,16 @@ struct OnboardingFlowView: View {
     @State private var isSubmitting = false
     @State private var errorMessage: String?
     @State private var isAuthorizingApple = false
+    @State private var wantsNewAccount = false  // Track if user wants to start fresh
     @FocusState private var focusField: Field?
 
     private enum Field { case cigs, price }
+    
+    /// Determine if we should show the quit settings form
+    private var shouldShowQuitForm: Bool {
+        // Show form if: user explicitly wants new account, OR signed in but has no profile
+        wantsNewAccount || (authViewModel.session != nil && !authViewModel.hasExistingProfile)
+    }
 
     private let slides: [OnboardingSlide] = [
         OnboardingSlide(
@@ -118,9 +125,108 @@ struct OnboardingFlowView: View {
 
     private var onboardingForm: some View {
         VStack(alignment: .leading, spacing: 16) {
+            if shouldShowQuitForm {
+                // QUIT SETTINGS FORM - for new users or those starting fresh
+                quitSettingsForm
+            } else {
+                // AUTH-FIRST VIEW - clean sign-in screen for returning users
+                authFirstView
+            }
+        }
+        .padding()
+    }
+    
+    // MARK: - Auth-First View (for returning users)
+    private var authFirstView: some View {
+        VStack(spacing: 24) {
+            Spacer()
+            
+            // Welcome icon
+            Image(systemName: "person.crop.circle.badge.checkmark")
+                .font(.system(size: 80))
+                .foregroundStyle(.white)
+                .padding(24)
+                .background(
+                    Circle()
+                        .fill(
+                            LinearGradient(
+                                colors: [.blue, .purple],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+                )
+                .shadow(radius: 18)
+            
+            Text("Welcome to Zikkim")
+                .font(.largeTitle.bold())
+                .multilineTextAlignment(.center)
+            
+            Text("Sign in to continue your smoke-free journey, or start fresh with a new account.")
+                .font(.title3.weight(.medium))
+                .foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 8)
+            
+            Spacer()
+            
+            if let errorMessage {
+                Text(errorMessage)
+                    .font(.callout)
+                    .foregroundStyle(.red)
+                    .multilineTextAlignment(.center)
+            }
+            
+            VStack(spacing: 12) {
+                // Sign In with Apple - primary action
+                SignInWithAppleButton(
+                    .signIn,
+                    onRequest: { request in
+                        isAuthorizingApple = true
+                        let rawNonce = NonceGenerator.shared.makeNonce()
+                        NonceGenerator.shared.currentNonce = rawNonce
+                        request.requestedScopes = [.fullName, .email]
+                        request.nonce = rawNonce.sha256()
+                    },
+                    onCompletion: { result in
+                        Task { await handleAppleResult(result) }
+                    }
+                )
+                .signInWithAppleButtonStyle(.black)
+                .frame(height: 50)
+                .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                .disabled(isAuthorizingApple)
+                
+                // Option to start fresh
+                Button(action: { withAnimation { wantsNewAccount = true } }) {
+                    Text("Start fresh with a new account")
+                        .font(.subheadline.weight(.medium))
+                        .foregroundStyle(.blue)
+                }
+                .padding(.top, 8)
+            }
+            .padding(.bottom, 20)
+        }
+    }
+    
+    // MARK: - Quit Settings Form (for new users)
+    private var quitSettingsForm: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            // Back button if user chose "start fresh"
+            if wantsNewAccount && authViewModel.session == nil {
+                Button(action: { withAnimation { wantsNewAccount = false } }) {
+                    HStack(spacing: 4) {
+                        Image(systemName: "chevron.left")
+                        Text("Back")
+                    }
+                    .font(.subheadline.weight(.medium))
+                    .foregroundStyle(.blue)
+                }
+            }
+            
             Text("Your quit plan")
                 .font(.largeTitle.bold())
-            Text("We will personalize your dashboard and sync securely to Supabase.")
+            Text("We will personalize your dashboard and sync securely to the cloud.")
                 .foregroundStyle(.secondary)
 
             DatePicker("Quit date & time", selection: $quitDate, displayedComponents: [.date, .hourAndMinute])
@@ -154,46 +260,51 @@ struct OnboardingFlowView: View {
             }
 
             VStack(spacing: 12) {
-                SignInWithAppleButton(
-                    .signUp,
-                    onRequest: { request in
-                        isAuthorizingApple = true
-                        let rawNonce = NonceGenerator.shared.makeNonce()
-                        NonceGenerator.shared.currentNonce = rawNonce
-                        request.requestedScopes = [.fullName, .email]
-                        request.nonce = rawNonce.sha256()
-                    },
-                    onCompletion: { result in
-                        Task { await handleAppleResult(result) }
-                    }
-                )
-                .signInWithAppleButtonStyle(.black)
-                .frame(height: 50)
-                .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
-                .disabled(isSubmitting)
-
-                Button(action: { Task { await submitProfile() } }) {
-                    HStack {
-                        if isSubmitting { ProgressView().tint(.white) }
-                        Text(isSubmitting ? "Saving..." : "Start my journey")
-                            .fontWeight(.semibold)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(
-                        LinearGradient(colors: [.blue, .purple], startPoint: .topLeading, endPoint: .bottomTrailing)
+                // Show Apple sign-in if not yet authenticated
+                if authViewModel.session == nil {
+                    SignInWithAppleButton(
+                        .signUp,
+                        onRequest: { request in
+                            isAuthorizingApple = true
+                            let rawNonce = NonceGenerator.shared.makeNonce()
+                            NonceGenerator.shared.currentNonce = rawNonce
+                            request.requestedScopes = [.fullName, .email]
+                            request.nonce = rawNonce.sha256()
+                        },
+                        onCompletion: { result in
+                            Task { await handleAppleResult(result) }
+                        }
                     )
-                    .foregroundStyle(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                    .signInWithAppleButtonStyle(.black)
+                    .frame(height: 50)
+                    .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .disabled(isSubmitting)
                 }
-                .disabled(isSubmitting || isAuthorizingApple)
+                
+                // Show "Start my journey" if signed in
+                if authViewModel.session != nil {
+                    Button(action: { Task { await submitProfile() } }) {
+                        HStack {
+                            if isSubmitting { ProgressView().tint(.white) }
+                            Text(isSubmitting ? "Saving..." : "Start my journey")
+                                .fontWeight(.semibold)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(
+                            LinearGradient(colors: [.blue, .purple], startPoint: .topLeading, endPoint: .bottomTrailing)
+                        )
+                        .foregroundStyle(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                    }
+                    .disabled(isSubmitting || isAuthorizingApple)
+                }
             }
 
             Text("This only shows once. You can always adjust your plan later.")
                 .font(.footnote)
                 .foregroundStyle(.secondary)
         }
-        .padding()
     }
 
     private func goNext() {
@@ -248,7 +359,13 @@ struct OnboardingFlowView: View {
             do {
                 try await authViewModel.signInWithApple(idToken: tokenString, nonce: nonce)
                 await authViewModel.loadProfile()
-                // After successful sign-in, we can proceed to submitProfile if desired.
+                
+                // If returning user with existing profile AND they didn't choose "start fresh",
+                // auto-complete onboarding and go to dashboard
+                if authViewModel.hasExistingProfile && !wantsNewAccount {
+                    hasCompletedOnboarding = true
+                }
+                // Otherwise, the form will show for them to create/update their profile
             } catch {
                 errorMessage = error.localizedDescription
             }
